@@ -25,6 +25,7 @@
              window.flutter_inappwebview.callHandler('mySum', 12, 2, 50).then(function(result) {
                // get result from Flutter side. It will be the number 64.
                  finalModel = JSON.parse(result);
+                 document.getElementById("idUnico").innerHTML= result;
                console.log(result);
              });
            });
