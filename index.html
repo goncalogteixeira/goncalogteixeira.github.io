@@ -36,8 +36,10 @@
             accessToken: finalModel.accessToken,
             embedUrl: finalModel.embedUrl,
             tokenType: 1,
-            settings: {
-            }
+           settings: {          
+layoutType: models.LayoutType.MobilePortrait
+        }
+      
         };
         var reportContainer = document.getElementById("desktopReport");
         powerbi.embed(reportContainer, config);
