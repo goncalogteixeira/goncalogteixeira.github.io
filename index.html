@@ -29,13 +29,7 @@
                  finalModel = JSON.parse(result);
                  
                console.log(result);
-             });
-           });
-        
-        
-        
-        
-        var models = window['powerbi-client'].models;
+                   var models = window['powerbi-client'].models;
         var config = {
             type: "report",
             id: finalModel.reportId,
@@ -47,6 +41,13 @@
         };
         var reportContainer = document.getElementById("desktopReport");
         powerbi.embed(reportContainer, config);
+             });
+           });
+        
+        
+        
+        
+      
    
         </script>
     </body>
