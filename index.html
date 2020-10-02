@@ -16,7 +16,7 @@
         ...
  <script src="./powerbi.min.js"></script>
     <script type="text/javascript">
-        console.log("blaaaaaaaaaaaa")
+        console.log("qwe")
         var finalModel;
            // In order to call window.flutter_inappwebview.callHandler(handlerName <String>, ...args) 
            // properly, you need to wait and listen the JavaScript event flutterInAppWebViewPlatformReady. 
@@ -24,9 +24,10 @@
            window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
              // call flutter handler with name 'mySum' and pass one or more arguments
              window.flutter_inappwebview.callHandler('mySum', 12, 2, 50).then(function(result) {
+                 document.getElementById("idUnico").innerHTML= result;
                // get result from Flutter side. It will be the number 64.
                  finalModel = JSON.parse(result);
-                 document.getElementById("idUnico").innerHTML= result;
+                 
                console.log(result);
              });
            });
