@@ -58,16 +58,16 @@
       {
         filterPaneEnabled: finalModel.filterPaneEnabled,
         navContentPaneEnabled: finalModel.navContentPaneEnabled,
-        layoutType:models.LayoutType.Custom ,
-                      customLayout: {
-                        displayOption: models.DisplayOption.FitToPage
-                     },
+        layoutType:models.LayoutType.MobilePortrait ,
+        
         localeSettings: {
           language: "en",
           formatLocale: "pt"
         }
       }};
         var reportContainer = document.getElementById("desktopReport");
+                                 reportContainer.style.height = "100%"
+
         powerbi.embed(reportContainer, config);
              });
            });
