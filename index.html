@@ -28,17 +28,42 @@
                console.log(result);
                    var models = window['powerbi-client'].models;
                  console.log("mobileLayout"+models.LayoutType.MobilePortrait);
-        var config = {
-            type: "report",
-            id: finalModel.reportId,
-            accessToken: finalModel.accessToken,
-            embedUrl: finalModel.embedUrl,
-            tokenType: 1,
-           settings: {          
-layoutType: models.LayoutType.MobilePortrait
-        }
+   //     var config = {
+     //       type: "report",
+       ///     id: finalModel.reportId,
+          ///  accessToken: finalModel.accessToken,
+            //embedUrl: finalModel.embedUrl,
+        //    tokenType: 1,
+       //    settings: {          
+//layoutType: models.LayoutType.MobilePortrait
+  //      }
       
-        };
+    //    };
+                 var config = {
+      type: 'report',
+      tokenType: models.TokenType.Embed,
+      accessToken: finalModel.accessToken,
+      embedUrl: finalModel.embedUrl,
+      pageName: finalModel.pageName,
+      permissions: models.Permissions.ReadWrite,
+      id: finalModel.reportId,
+      viewMode: models.ViewMode.View,
+     // filters: Array.isArray(reportFilters) ? reportFilters : [reportFilters],
+      settings:
+      // this.isMobile ? {
+      //   filterPaneEnabled: reportConfig.filterPaneEnabled,
+      //   navContentPaneEnabled: reportConfig.navContentPaneEnabled,
+      //   layoutType: environment.powerBIMobileLayout
+      // } :
+      {
+        filterPaneEnabled: finalModel.filterPaneEnabled,
+        navContentPaneEnabled: finalModel.navContentPaneEnabled,
+        layoutType:models.LayoutType.MobilePortrait ,
+        localeSettings: {
+          language: "en",
+          formatLocale: "pt"
+        }
+      }
         var reportContainer = document.getElementById("desktopReport");
         powerbi.embed(reportContainer, config);
              });
