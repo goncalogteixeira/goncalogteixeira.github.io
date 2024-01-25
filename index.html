@@ -15,7 +15,14 @@
           window.addEventListener("load", (event) => {
              const urlParams = new URLSearchParams(window.location.search);
             const myParam = urlParams.get('num');
-              document.body.innerHTML += '<audio controls autoplay><source src="'+myParam+'.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>';
+              
+              document.body.innerHTML += '<audio controls ID="Player" autoplay><source src="'+myParam+'.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>';
+
+               var player = document.getElementById('Player');
+                  const rndInt = Math.floor(Math.random() * 120) + 1
+
+                player.currentTime += rndInt; /**tried also with audio.currentTime here. Didn't worked **/
+        
             });
 
         </script>
