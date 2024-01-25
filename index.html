@@ -19,8 +19,8 @@
               document.body.innerHTML += '<audio controls ID="Player" autoplay><source src="'+myParam+'.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>';
 
                var player = document.getElementById('Player');
-                  const rndInt = Math.random() 
-                rndInt -= 0.25;
+                  var rndInt = Math.random() 
+                rndInt -= 0.2;
               if(rndInt < 0){
               rndInt = 0;
               }
