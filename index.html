@@ -24,8 +24,8 @@
               if(rndInt < 0){
               rndInt = 0;
               }
-              console.log(rndInt*player.duration);
-              console.log(Math.round(rndInt*player.duration))
+              console.log(player.duration);
+              console.log(player)
                 player.currentTime = Math.round(rndInt*player.duration); /**tried also with audio.currentTime here. Didn't worked **/
         
             });
