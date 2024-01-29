@@ -6,17 +6,58 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Guessing Game</title>
 
+ <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
+        .container {
+            text-align: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
     </head>
     <body>
+    <div id="div" class="container">
+        <div id="div">
+         
+        </div>
+    
     <Button id="button" onclick="Guess()"> Guess!! </Button>
+</div>
               
       <script>
           window.addEventListener("load", (event) => {
              const urlParams = new URLSearchParams(window.location.search);
             const myParam = urlParams.get('num');
-              
-              document.body.innerHTML += '<audio controls ID="Player" autoplay><source src="'+myParam+'.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>';
+                             var element = document.getElementById('div');
+              element.innerHTML += '<audio controls ID="Player" autoplay><source src="'+myParam+'.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>';
 
                var player = document.getElementById('Player');
                 var randomNumber = Math.floor(Math.random() * 120) + 1;
